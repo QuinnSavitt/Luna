@@ -1,11 +1,7 @@
 # Base class for all modules
-from typing import List
 
 
 class Module:
-    def __init__(self, name: str, triggers: List[str]):
+    def __init__(self, name: str, triggers: list[str]):
         self.name = name
         self.triggers = triggers
-
-    def followUp(self, text):
-        pass

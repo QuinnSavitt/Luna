@@ -2,7 +2,7 @@ import Supplements
 from Module import Module
 import pickle
 import requests
-f = open("SportsKey.qrs", "r")
+f = open("Res/SportsKey.qrs", "r")
 key = f.read()
 f.close()
 #TODO: Fix misassociation bug (fixed? needs full names, but nicknames can be added manually)
@@ -11,7 +11,7 @@ class Sports(Module):
     def __init__(self, env):
         super().__init__("Sports", ["game", "standings"])
         self.env = env
-        with open('team_ids.pkl', 'rb') as f:
+        with open('Res/team_ids.pkl', 'rb') as f:
             try:
                 self.ids = pickle.load(f)
                 env.log("ID's loaded")
@@ -21,7 +21,7 @@ class Sports(Module):
             env.log(self.ids)
 
     def saveDict(self):
-        with open('team_ids.pkl', 'wb') as f:
+        with open('Res/team_ids.pkl', 'wb') as f:
             self.env.log("team ids saved")
             pickle.dump(self.ids, f)
 

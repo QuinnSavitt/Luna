@@ -30,7 +30,7 @@ def Auth():
             print(j)
             #refresh = j['refresh_token']
             access = j['access_token']
-            f = open("SpotifyAccess.qrs", "w")
+            f = open("Res/SpotifyAccess.qrs", "w")
             #f.write(refresh)
             f.close()
             return
@@ -51,7 +51,7 @@ def Auth():
     j = response.json()
     refresh = j['refresh_token']
     access = j['access_token']
-    f = open("SpotifyAccess.qrs", "w")
+    f = open("../Res/SpotifyAccess.qrs", "w")
     f.write(refresh)
     f.close()
     print(access)
@@ -62,7 +62,7 @@ class Spotify(Module):
     def __init__(self):
         global refresh
         super().__init__("spotify", ["play", "spotify", "music", "resume", "pause"])
-        f = open("SpotifyAccess.qrs", "r")
+        f = open("Res/SpotifyAccess.qrs", "r")
         refresh = f.read()
         print(refresh)
         f.close()
