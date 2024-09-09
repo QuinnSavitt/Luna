@@ -1,12 +1,11 @@
 from Modules.Spotify import Spotify
 from Modules.Weather import Weather
 from Modules.Sports import Sports
-from Modules.FollowUp import Followup
 from Envs import *
 
 # Initiate modules. Note that overlaps will be handled by priority in this list
 tenv = Tenv()
-modules = [Spotify(), Weather(), Sports(tenv), Followup(d)]
+modules = [Spotify(), Weather(), Sports(tenv)]
 triggers = {}
 for m in modules:
     for t in m.triggers:
